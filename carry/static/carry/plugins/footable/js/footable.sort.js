@@ -6,14 +6,18 @@
         sort: true,
         sorters: {
             alpha: function (a, b) {
-              if (typeof(a) === 'string') { a = a.toLowerCase(); }
-              if (typeof(b) === 'string') { b = b.toLowerCase(); }
-              if (a === b) return 0;
-              if (a < b) return -1;
-              return 1;
+                if (typeof(a) === 'string') {
+                    a = a.toLowerCase();
+                }
+                if (typeof(b) === 'string') {
+                    b = b.toLowerCase();
+                }
+                if (a === b) return 0;
+                if (a < b) return -1;
+                return 1;
             },
             numeric: function (a, b) {
-              return a - b;
+                return a - b;
             }
         },
         classes: {
@@ -78,11 +82,11 @@
                                 ft.bindToggleSelectors();
                             }
                         },
-                        'footable_redrawn.sorting': function(e) {
+                        'footable_redrawn.sorting': function (e) {
                             var $table = $(ft.table),
                                 cls = ft.options.classes.sort;
                             if ($table.data('sorted') >= 0) {
-                                $table.find('> thead > tr:last-child > th').each(function(i){
+                                $table.find('> thead > tr:last-child > th').each(function (i) {
                                     var $th = $(this);
                                     if ($th.hasClass(cls.sorted) || $th.hasClass(cls.descending)) {
                                         p.doSort(i);
@@ -103,12 +107,12 @@
                             e.column.data.sort.match = e.column.data.matches[match];
                         }
                     })
-                //save the sort object onto the table so we can access it later
-                .data('footable-sort', p);
+                    //save the sort object onto the table so we can access it later
+                    .data('footable-sort', p);
             }
         };
 
-        p.doSort = function(columnIndex, ascending) {
+        p.doSort = function (columnIndex, ascending) {
             var ft = p.footable;
             if ($(ft.table).data('sort') === false) return;
 
@@ -125,7 +129,7 @@
             if (column.sort.ignore === true) return true;
 
             //raise a pre-sorting event so that we can cancel the sorting if needed
-            var event = ft.raise(evt.sorting, { column: column, direction: ascending ? 'ASC' : 'DESC' });
+            var event = ft.raise(evt.sorting, {column: column, direction: ascending ? 'ASC' : 'DESC'});
             if (event && event.result === false) return;
 
             $table.data('sorted', column.index);
@@ -145,7 +149,7 @@
             p.sort(ft, $tbody, column, ascending);
 
             ft.bindToggleSelectors();
-            ft.raise(evt.sorted, { column: column, direction: ascending ? 'ASC' : 'DESC' });
+            ft.raise(evt.sorted, {column: column, direction: ascending ? 'ASC' : 'DESC'});
         };
 
         p.rows = function (ft, tbody, column) {
@@ -156,7 +160,7 @@
                 if ($row.next().hasClass(ft.options.classes.detail)) {
                     $next = $row.next().get(0);
                 }
-                var row = { 'row': $row, 'detail': $next };
+                var row = {'row': $row, 'detail': $next};
                 if (column !== undefined) {
                     row.value = ft.parse(this.cells[column.sort.match], column);
                 }

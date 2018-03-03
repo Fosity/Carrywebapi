@@ -5,10 +5,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}</title>
-   	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet"
+		  type="text/css">
 	<link rel="stylesheet" href="{% static 'carry/css/bootstrap.min.css' %}" type="text/css">
 	<link rel="stylesheet" href="{% static 'carry/css/nifty.min.css' %}" type="text/css">
-
 	<link rel="stylesheet" href="{% static 'carry/icons/line-icons/premium-line-icons.min.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'carry/icons/solid-icons/premium-solid-icons.min.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'carry/plugins/pace/pace.min.css' %}" type="text/css"/>
@@ -22,7 +22,6 @@
 	{% block css %}{% endblock %}
 </head>
 <body>
-
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
 	<!--NAVBAR-->
 	<!--===================================================-->
@@ -31,7 +30,7 @@
 			<!--Brand logo & name-->
 			<!--================================-->
 			<div class="navbar-header">
-				<a href="{% url 'carry:index'%}" class="navbar-brand">
+				<a href="{% url 'carry:index' %}" class="navbar-brand">
 					<div class="brand-title">
 						<span class="brand-text">CRM系统</span>
 					</div>
@@ -92,7 +91,6 @@
 							</div>
 						</div>
 					</li>
-
 				</ul>
 				<ul class="nav navbar-top-links pull-right">
 					<!--End language selector-->
@@ -109,7 +107,6 @@
 						<div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
 							<!-- Dropdown heading  -->
 							<div class="pad-all bord-btm">
-
 							</div>
 							<!-- User dropdown menu -->
 							<ul class="head-list">
@@ -170,7 +167,6 @@
 		<div id="content-container">
 			<!--Page Title-->
 			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
 			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 			<!--End page title-->
 			<!--Page content-->
@@ -189,7 +185,6 @@
 			<div id="aside">
 				<div class="nano">
 					<div class="nano-content">
-
 					</div>
 				</div>
 			</div>
@@ -208,7 +203,8 @@
 							<div id="mainnav-profile" class="mainnav-profile">
 								<div class="profile-wrap">
 									<div class="pad-btm">
-										<img class="img-circle img-sm img-border" src="{% static 'carry/img/profile-photos/1.png' %}"
+										<img class="img-circle img-sm img-border"
+											 src="{% static 'carry/img/profile-photos/1.png' %}"
 											 alt="Profile Picture">
 									</div>
 									<a href="#profile-nav" class="box-block" data-toggle="collapse"
@@ -357,7 +353,7 @@
 </div>
 <script>
     $(function () {
-{#        {% rbac_js %}#}
+        {#        {% rbac_js %}#}
     });
 </script>
 {% block js %} {% endblock %}

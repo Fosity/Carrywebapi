@@ -1,5 +1,4 @@
 {% extends 'carry/layout.html' %}
-
 {% load carry_form %}
 {% load rbac %}
 
@@ -12,10 +11,10 @@
 			{% title_pre request %}
 		</h2>
 	</div>
-				<div id="page-content">
-    <div class="container">
-        <h1>添加数据</h1>
-        {% show_add_edit_form form %}
-    </div>
+	<div id="page-content">
+		<div class="container">
+			<h1>添加数据</h1>
+			{% show_add_edit_form form %}
+		</div>
 	</div>
 {% endblock %}

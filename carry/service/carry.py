@@ -3,7 +3,6 @@ import copy
 import json
 from types import FunctionType
 
-from carry.utils.pageinfo import PageInfo
 from django.conf import settings
 from django.db.models import ForeignKey, ManyToManyField
 from django.forms import ModelForm
@@ -12,6 +11,8 @@ from django.shortcuts import redirect, render
 from django.template.response import TemplateResponse, SimpleTemplateResponse
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+
+from carry.utils.pageinfo import PageInfo
 
 
 def model_to_dict(instance, fields=None, exclude=None):
